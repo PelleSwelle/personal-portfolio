@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  Images: {
+    remotePatterns: [
+      new URL("https://via.placeholder.com"),
+    ],
+  }
 };
 
 export default nextConfig;
