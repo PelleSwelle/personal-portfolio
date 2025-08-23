@@ -10,11 +10,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from "next/image"
+import { url } from "inspector"
+import Link from "next/link"
 
 const projects = [
-  { title: "Project 1", description: "Description of Project 1", image: "/images/anvisninger.png" },
-  { title: "Project 2", description: "Description of Project 2", image: "/images/logoTransparent.png" },
-  { title: "Project 3", description: "Description of Project 3", image: "/images/synth.png" },
+  { title: "Anvisninger.dk", image: "/images/anvisninger.png", url: "/projects/anvisningerdk" },
+  { title: "The Lost Island", image: "/images/logoTransparent.png", url: "/projects/thelostisland" },
+  { title: "Virtual Musicality", image: "/images/synth.png", url: "/projects/virtualmusicality" },
 ]
 
 export function CarouselDemo() {
@@ -24,13 +26,14 @@ export function CarouselDemo() {
           <Card>
             <CardContent className="flex flex-col aspect-square items-center justify-center p-6">
               <span className="text-2xl font-semibold">{project.title}</span>
-              <p className="text-sm text-muted-foreground">{project.description}</p>
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={150}
-                height={150}
-                className="rounded-lg"/>
+              <Link href={project.url} className="inset-0 z-10">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={150}
+                  height={150}
+                  className="rounded-lg"/>
+              </Link>
             </CardContent>
           </Card>
         </div>

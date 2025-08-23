@@ -1,0 +1,23 @@
+{
+    "thelostisland": {
+        "name": "The Lost Island",
+        "description": "A 3D adventure game developed in Unity, featuring exploration, puzzles, and a captivating storyline.",
+        "technologies": ["Unity", "C#", "Blender"],
+        "image": "/images/logoTransparent.png",
+        "url": "/projects/thelostisland"
+    },
+    "anvisningerdk": {
+        "name": "Anvisninger.dk",
+        "description": "A comprehensive platform for DIY enthusiasts, offering step-by-step guides and tutorials on various home improvement projects.",
+        "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+        "image": "/images/anvisninger.png",
+        "url": "/projects/anvisningerdk"
+    },
+    "virtualmusicality": {
+        "name": "Virtual Musicality",
+        "description": "An innovative web application that allows users to create and share music compositions using virtual instruments.",
+        "technologies": ["React", "Web Audio API", "Node.js"],
+        "image": "/images/synth.png",
+        "url": "/projects/virtualmusicality"
+    }
+}
