@@ -1,12 +1,20 @@
-import { CarouselDemo } from "../components/carouselDemo";
-import { ModeToggle } from "../components/themeToggle";
+import { ModeToggle } from "./components/themeToggle";
+import openDb from "./api/database"
 
-export default function Home() {
+    
+export default async function Home() {
+      
+  // open database
+  const db = await openDb();
+
+  // query data
+  const allPosts = await db.all('SELECT * FROM projects');
+  
   return (
     <main className="flex min-h-screen items-center justify-between p-24">
       <div className="flex flex-col items-center">
         <h1 className="text-4xl font-bold">My Name is Peter Dønvang and I enjoy building things!</h1>
-        <CarouselDemo/>
+        <p className="mt-4 text-lg">This page is eventually going to hold some type of showcase for a cool animation, interactive something-or-other. We will see.</p>
       </div>
       <ModeToggle/>
       
