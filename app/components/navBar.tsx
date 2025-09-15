@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 
 import {
   NavigationMenu,
@@ -54,7 +53,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu viewport={false}>
+    <NavigationMenu viewport={false} className="fixed">
       <NavigationMenuList>
         <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
