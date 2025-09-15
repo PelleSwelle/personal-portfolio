@@ -2,7 +2,22 @@ import Link from "next/link";
 import openDb from "../api/database";
 import Image from "next/image";
 
-export default async function ProjectSection({ project }: { project?: any }) {
+interface project {
+    id: number;
+    title: string;
+    subTitle: string;
+    shortDescription: string;
+    longDescription: string;
+    image: string;
+}
+
+interface technology {
+    technology_id: number;
+    title: string;
+    image: string;
+}
+
+export default async function ProjectSection({ project }: { project: project }) {
     const db = await openDb();
     const allTech = await db.all(`
         SELECT 
@@ -31,7 +46,7 @@ export default async function ProjectSection({ project }: { project?: any }) {
                     <p>{project.subTitle}</p>
                     <div className="flex flex-row">
                         {
-                            allTech.map((tech: any) => (
+                            allTech.map((tech: technology) => (
                                 <Image key={tech.technology_id} src={`${tech.image}.png`} alt={tech.image} width={20} height={20} className="rounded-md object-cover h-8 w-8 ml-2" />
                             ))
                         }
