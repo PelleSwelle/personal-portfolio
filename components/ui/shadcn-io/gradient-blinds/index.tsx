@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from "react";
-// @ts-ignore
 import { Renderer, Program, Mesh, Triangle } from "ogl";
 
 export interface GradientBlindsProps {
