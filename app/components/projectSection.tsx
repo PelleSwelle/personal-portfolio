@@ -1,21 +1,7 @@
 import Link from "next/link";
 import openDb from "../api/database";
 import Image from "next/image";
-
-interface project {
-    id: number;
-    title: string;
-    subTitle: string;
-    shortDescription: string;
-    longDescription: string;
-    image: string;
-}
-
-interface technology {
-    technology_id: number;
-    title: string;
-    image: string;
-}
+import { technology, project } from "@/types/interfaces";
 
 export default async function ProjectSection({ project }: { project: project }) {
     const db = await openDb();
