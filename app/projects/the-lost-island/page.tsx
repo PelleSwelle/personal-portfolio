@@ -6,6 +6,7 @@ import CodeWithExplanation from "@/app/components/CodeWithExplanation";
 
 export default async function Thelostisland(
 ) {
+    // TODO: let user choose wheter to see code or not.
     const db = await openDb();
     const project = await db.get('SELECT * FROM projects where id = 2');
 
