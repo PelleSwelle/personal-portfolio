@@ -1,6 +1,6 @@
 import openDb from "@/app/api/database"
 import Image from "next/image";
-import { Activity, technology, project } from "@/types/interfaces";
+import { Activity, technology, project, codeSnippet } from "@/types/interfaces";
 import CodeWithExplanation from "@/app/components/CodeWithExplanation";
 import { ReactNode } from "react";
 
@@ -8,17 +8,18 @@ export default async function ProjectPage({children, project}: {children: ReactN
     // TODO: let user choose wheter to see code or not.
     const db = await openDb();
 
-    const activities = await db.all(`
-        SELECT
-            a.id as activity_id,
-            a.title
-        FROM
-            project_activities pa
-        JOIN
-            activities a ON pa.activity_id = a.id
-        WHERE
-            pa.project_id = ${project.id}
-    `)
+    const activities = project.roles
+    // const activities = await db.all(`
+    //     SELECT
+    //         a.id as activity_id,
+    //         a.title
+    //     FROM
+    //         project_activities pa
+    //     JOIN
+    //         activities a ON pa.activity_id = a.id
+    //     WHERE
+    //         pa.project_id = ${project.id}
+    // `)
 
     const allTech = await db.all(`
         SELECT 
@@ -32,7 +33,15 @@ export default async function ProjectPage({children, project}: {children: ReactN
         WHERE 
             pt.project_id = ?
     `, [project.id]);
-
+    
+    const codeSnippets = await db.all(`
+        SELECT 
+            *
+        FROM
+            code_snippets
+        WHERE
+            game_id = ${project.id}`)
+        
     return (
         <main className="relative flex min-h-screen w-full flex-col items-start justify-center p-24 gap-4">
             <div className="w-full flex">
@@ -54,6 +63,12 @@ export default async function ProjectPage({children, project}: {children: ReactN
 
             <p className="pr-[30%] mb-20">{project.longDescription}</p>
             {children}
+
+            <h2 className="text-4xl font-bold dark:text-white">Code Snippets</h2>
+
+                { codeSnippets?.map(snippet => (
+                    <CodeWithExplanation key={snippet.id} code={snippet}/>                   
+                ))}
         </main>
     )
 }

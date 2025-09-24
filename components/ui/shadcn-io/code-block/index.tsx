@@ -251,9 +251,11 @@ const codeBlockClassName = cn(
 
 
 export type CodeBlockData = {
+  id: number;
+  code: string;
+  description: string;
   language: string;
   filename: string;
-  code: string;
 };
 
 type CodeBlockContextType = {

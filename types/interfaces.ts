@@ -5,6 +5,9 @@ interface project {
     shortDescription: string;
     longDescription: string;
     image: string;
+    codeSnippets?: codeSnippet[];
+    roles: Activity[];
+    technologies: technology[];
 }
 
 interface technology {
@@ -18,10 +21,11 @@ interface Activity {
     title: string;
 }
 
-interface code {
+interface codeSnippet {
   language: string;
   filename: string;
   code: string;
+  description: string;
 }
 
-export type { project, technology, Activity, code };
+export type { project, technology, Activity, codeSnippet };
