@@ -1,16 +1,14 @@
 import ProjectSection from "../components/projectSection";
 import openDb from "../api/database";
-
+import { fetchAllProjects } from "../api/route";
 
 export default async function Projects() {
-
-    const db = await openDb();
-    const allProjects = await db.all('SELECT * FROM projects');
+    const allProjects = await fetchAllProjects();
 
     return (
         <main className="flex min-h-screen p-0 flex-col p-24 gap-12">
             <div className="relative flex flex-col items-center">
-                <div className="grid-cols-2 gap-12 min-w-full grid">
+                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 min-w-full">
                     {allProjects.map((project) => (
                         <ProjectSection key={project.id} project={project}/>
                     ))}

@@ -1,22 +1,12 @@
 import Link from "next/link";
 import openDb from "../api/database";
 import Image from "next/image";
-import { technology, project } from "@/types/interfaces";
+import { Technology, Project } from "@/types/interfaces";
+import { fetchProjectTechnologies } from "../api/route";
 
-export default async function ProjectSection({ project }: { project: project }) {
-    const db = await openDb();
-    const allTech = await db.all(`
-        SELECT 
-            t.id as technology_id,
-            t.title,
-            t.image
-        FROM 
-            project_technologies pt
-        JOIN 
-            technologies t ON pt.technology_id = t.id
-        WHERE 
-            pt.project_id = ?
-        `, [project.id]);
+export default async function ProjectSection({ project }: { project: Project }) {
+    
+    const allTech = await fetchProjectTechnologies(project.id);
 
     
     return (
@@ -32,8 +22,8 @@ export default async function ProjectSection({ project }: { project: project }) 
                     <p>{project.subTitle}</p>
                     <div className="flex flex-row">
                         {
-                            allTech.map((tech: technology) => (
-                                <Image key={tech.technology_id} src={`${tech.image}.png`} alt={tech.image} width={20} height={20} className="rounded-md object-cover h-8 w-8 ml-2" />
+                            allTech.map((tech: Technology) => (
+                                <Image key={tech.id} src={`${tech.image}.png`} alt={tech.image} width={20} height={20} className="rounded-md object-cover h-8 w-8 ml-2" />
                             ))
                         }
                     </div>
