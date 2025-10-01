@@ -1,5 +1,4 @@
 import ProjectSection from "../components/projectSection";
-import openDb from "../api/database";
 import { fetchAllProjects } from "../api/route";
 
 export default async function Projects() {
