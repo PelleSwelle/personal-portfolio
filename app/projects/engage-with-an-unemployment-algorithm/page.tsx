@@ -1,11 +1,13 @@
 import openDb from "@/app/api/database"
 import ProjectPage from "@/app/components/ProjectPage";
 
-export default async function Thelostisland(
-) {
+const StarAlgorithm = async () => {
     const db = await openDb();
-    const project = await db.get(`SELECT * FROM projects WHERE id = ${2}`)
+    const project = await db.get(`SELECT * FROM projects Where id = ${6}`)
+
     return (
         <ProjectPage project={project}/>
     )
 }
+
+export default StarAlgorithm

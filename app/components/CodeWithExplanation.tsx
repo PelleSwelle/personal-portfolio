@@ -1,31 +1,19 @@
 'use client';
 
-import type { BundledLanguage } from '@/components/ui/shadcn-io/code-block';
-import {
-  CodeBlock,
-  CodeBlockBody,
-  CodeBlockContent,
-  CodeBlockItem,
-} from '@/components/ui/shadcn-io/code-block';
-import { ReactNode } from 'react';
-import { code } from '@/types/interfaces';
+import { CodeSnippet, CodeViewerProps } from '@/types/interfaces';
+import CodeViewer from './CodeViewer';
 
+export default function CodeWithExplanation({ props }: { props: CodeSnippet }) {
 
-const CodeWithExplanation = ({code, children}: {code: code[], children: ReactNode}) => (
-    <div className="flex flex-row gap-4 items-center">
-        {children}
-        <CodeBlock data={code} defaultValue={code[0].language}>
-            <CodeBlockBody>
-            {(item) => (
-                <CodeBlockItem key={item.language} value={item.language}>
-                <CodeBlockContent language={item.language as BundledLanguage}>
-                    {item.code}
-                </CodeBlockContent>
-                </CodeBlockItem>
-            )}
-            </CodeBlockBody>
-        </CodeBlock>
-    </div>
-);
-
-export default CodeWithExplanation;
+    const codeViewerProps: CodeViewerProps = {
+        code: props.code,
+        language: props.language,
+        fileName: props.filename
+    }
+    return (
+        <div className="flex flex-row gap-4 items-center">
+            <p>{props.description}</p>
+            <CodeViewer props={codeViewerProps}/>
+        </div>
+    )
+};
