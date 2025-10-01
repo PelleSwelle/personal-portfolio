@@ -2,7 +2,7 @@ import Link from "next/link";
 import openDb from "../api/database";
 import Image from "next/image";
 import { Technology, Project } from "@/types/interfaces";
-import { fetchProjectTechnologies } from "../api/route";
+import { fetchProjectTechnologies } from "../api/calls";
 
 export default async function ProjectSection({ project }: { project: Project }) {
     

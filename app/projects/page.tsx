@@ -1,5 +1,5 @@
 import ProjectSection from "../components/projectSection";
-import { fetchAllProjects } from "../api/route";
+import { fetchAllProjects } from "../api/calls";
 
 export default async function Projects() {
     const allProjects = await fetchAllProjects();

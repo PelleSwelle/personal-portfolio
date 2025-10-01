@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Role, Technology, Project } from "@/types/interfaces";
 import CodeWithExplanation from "@/app/components/CodeWithExplanation";
 import { ReactNode } from "react";
-import { fetchProjectCodeSnippets, fetchProjectRoles, fetchProjectTechnologies } from "../api/route";
+import { fetchProjectCodeSnippets, fetchProjectRoles, fetchProjectTechnologies } from "../api/calls";
 
 export default async function ProjectPage({project}: {project: Project}) {
     const db = await openDb();
