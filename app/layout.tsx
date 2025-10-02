@@ -31,13 +31,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row bg-background font-sans text-foreground`}
       >
         <div className="absolute inset-0 z-0 w-full h-min-screen">
-          <GradientBlinds
+          {/* <GradientBlinds
             gradientColors={["#ff0080", "#8000ff", "#0080ff"]}
             blindCount={12}
             angle={45}
             distortAmount={1.0}
             mixBlendMode="screen"
-          />
+          /> */}
+          
         </div>
         <NavigationMenuDemo/>
         <ThemeProvider
