@@ -1,60 +1,58 @@
 'use client'
+
 import { useEffect, useState } from "react";
 
-export default function wordflick() {
-    const [part, setPart] = useState('')
-    const words = [
-        "Hi i like HTML",
-        "I also like css",
-        "Lorem ipsum dolor sit amet",
-        " consectetur adipiscing elit",
-        "sed do eiusmod tempor incididunt"
-    ];
-    let i = 0;
-    let offset = 0;
-    const len = words.length;
-    let forwards = true;
-    let waitTick = 0;
-    let hangTime = 15;
-    let tickDuration = 20;
+export default function WriterText({sentences}: {sentences: string[]}) {
+    const [part, setPart] = useState('');
 
-    const flick = () => {
+    let sentenceIndex = 0
+    let offset = 0
+    const numberOfSentences = sentences.length
+    let forwards = true
+    let pauseTick = 0
+    let ticksToPause = 30
+    let tickDuration = 40;
+
+    const write = () => {
         if (forwards) {
-            if (offset >= words[i].length) {
-                ++waitTick;
-                if (waitTick == hangTime) {
+            if (offset >= sentences[sentenceIndex].length) {
+                ++pauseTick;
+                if (pauseTick == ticksToPause) {
                     forwards = false;
-                    waitTick = 0;
-                }
-            }
-        } else {
-            if (offset == 0) {
-                forwards = true;
-                i++;
-                offset = 0;
-                if (i >= len) {
-                    i = 0;
+                    pauseTick = 0;
                 }
             }
         }
-        setPart(words[i].substring(0, offset))
-        // part = words[i].substring(0, offset);
-        console.log(part)
-        if (waitTick == 0) {
+        else {
+            if (offset == 0) {
+                forwards = true;
+                sentenceIndex++;
+                offset = 0;
+                if (sentenceIndex >= numberOfSentences) {
+                    sentenceIndex = 0;
+                }
+            }
+        }
+
+        if (pauseTick == 0) {
             if (forwards) {
                 offset++;
-            } else {
+            }
+            else {
                 offset--;
             }
         }
-    };
+        setPart(sentences[sentenceIndex].substring(0, offset))
+    }
 
     useEffect(() => {
-        console.log('useEffect runs')
-        setTimeout(flick, tickDuration)
-    }, [part])
+        setInterval(() => {
+            write()
+        }, tickDuration);
+
+    }, [])
 
     return (
-        <div>{part}</div>
+        <span className="text-blue-600 text-4xl font-bold">{part}</span>
     )
-};
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavigationMenuDemo } from "./components/navBar";
 import GradientBlinds from "@/components/ui/shadcn-io/gradient-blinds/index";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row bg-background font-sans text-foreground`}
       >
         <div className="absolute inset-0 z-0 w-full h-min-screen">
-          {/* <GradientBlinds
-            gradientColors={["#ff0080", "#8000ff", "#0080ff"]}
-            blindCount={12}
-            angle={45}
-            distortAmount={1.0}
-            mixBlendMode="screen"
-          /> */}
-          
+          <div className="w-[120%] h-[120%]">
+            <Image style={{filter: 'sepia() opacity(.2)'}} src={'/images/background_placeholder.jpg'} alt="placeholder" fill/>
+          </div>
         </div>
         <NavigationMenuDemo/>
         <ThemeProvider
