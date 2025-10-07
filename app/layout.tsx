@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NavigationMenuDemo } from "./components/navBar";
 import GradientBlinds from "@/components/ui/shadcn-io/gradient-blinds/index";
 import Image from "next/image";
+import BackgroundBalls from "./components/backgroundBalls";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,8 @@ export default function RootLayout({
       >
         <div className="absolute inset-0 z-0 w-full h-min-screen">
           <div className="w-[120%] h-[120%]">
-            <Image style={{filter: 'sepia() opacity(.2)'}} src={'/images/background_placeholder.jpg'} alt="placeholder" fill/>
+            {/* <Image style={{filter: 'sepia() opacity(.2)'}} src={'/images/background_placeholder.jpg'} alt="placeholder" fill/> */}
+            <BackgroundBalls/>
           </div>
         </div>
         <NavigationMenuDemo/>
