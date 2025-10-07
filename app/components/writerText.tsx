@@ -10,8 +10,8 @@ export default function WriterText({sentences}: {sentences: string[]}) {
     const numberOfSentences = sentences.length
     let forwards = true
     let pauseTick = 0
-    let ticksToPause = 30
-    let tickDuration = 40;
+    const ticksToPause = 30
+    const tickDuration = 40;
 
     const write = () => {
         if (forwards) {
