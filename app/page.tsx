@@ -6,12 +6,26 @@ export default function Home() {
   const sentences = [
     'I love to create things',
     'I love to learn',
-    'code is fun'
+    'code is fun',
+    'there are hot singles in your area',
+    'jag pratar också svenska!',
+    '... og dansk taler jeg også!',
+    'what...',
+    'are you just going to hang around here on the frontpage?',
+    "I don't have anymore taglines to add to this.",
+    'please move on to another page',
+    'at some point I will just loop back to the beginning.',
+    "that won't be very exciting.",
+    'it will ruin the illusion, that I am actually talking to you.',
+    'I will be exposed as just a loop of predetermined strings',
+    "maybe it's for the best...",
+    "I will just loop back around and see you on the other side."
   ]
   return (
     <main className="flex min-h-screen w-full items-center justify-between p-24">
       <div className="relative left-[20%] rounded-lg overflow-hidden">
-        <div className="flex">
+        
+        <div className="flex flex-col">
           <h1 className="text-4xl font-bold">My Name is Peter Dønvang and </h1>
           <WriterText sentences={sentences}/>
         </div>
