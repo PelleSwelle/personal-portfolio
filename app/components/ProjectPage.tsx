@@ -20,7 +20,7 @@ export default async function ProjectPage({project}: {project: Project}) {
             <h2 className="text-4xl font-bold dark:text-white">{project.title}</h2>
             <div className="h-0.5 w-[100%] bg-white"></div>
             <div className="flex w-full flex-row justify-between">
-                <p>{project.subTitle}</p>
+                <p className="text-xl border-solid border-white border-b-1">{project.subTitle}</p>
                 <div className="flex flex-row">
                     {
                         roles.map((role) => (
@@ -30,7 +30,7 @@ export default async function ProjectPage({project}: {project: Project}) {
                 </div>
             </div>
 
-            <p className="pr-[30%] mb-20">{project.longDescription}</p>
+            <p className="pr-[40%] mb-20 text-lg">{project.longDescription}</p>
 
             <h2 className="text-4xl font-bold dark:text-white">Code Snippets</h2>
 
