@@ -53,6 +53,6 @@ export default function WriterText({sentences}: {sentences: string[]}) {
     }, [])
 
     return (
-        <span className="text-blue-600 text-4xl font-bold">{part}</span>
+        <div className="text-blue-600 text-4xl font-bold">{part}</div>
     )
 }
