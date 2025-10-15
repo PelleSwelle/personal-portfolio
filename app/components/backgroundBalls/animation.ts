@@ -1,29 +1,10 @@
-const startTopLeft: Keyframe[] = [
-    { left: 40 + '%', top: 60 + '%' },
-    { left: 70  + '%', top: 40 + '%' }
-]
-
-const startCenterLeft: Keyframe[] = [
-    { left: 60 + '%' , top: 80 + '%'  },
-    { left: 30 + '%' , top: 50 + '%' }
-]
-
 const animationOptions: KeyframeEffectOptions = {
     duration: 8000,
     direction: "alternate",
-    iterations: Infinity
-}
+    iterations: Infinity,
+    easing: 'ease-in-out'
 
-const centerLeftToRightBottom = {
-    keyframes: startCenterLeft,
-    options: animationOptions
 }
-
-const topLeftToCenter = {
-    keyframes: startTopLeft,
-    options: animationOptions
-}
-
 
 interface keyframeArgs {
     start: {x: number, y: number},
