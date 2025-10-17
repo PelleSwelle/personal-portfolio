@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { Menu } from "@deemlol/next-icons"
 import {
@@ -12,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -51,12 +53,15 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavigationMenuDemo() {
-  return (
-    <div>
-      <div className="md:hidden">
-        <Menu size={24} color="#ffffff" />
-      </div>
+const NavMenu = () => {
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false);
+
+  const handleClickBurger = () => {
+    console.log('click')
+    setBurgerIsOpen(!burgerIsOpen)
+  }
+  if (burgerIsOpen) {
+    return (
       <div>
         <NavigationMenu viewport={false} className="fixed">
           <NavigationMenuList>
@@ -86,7 +91,19 @@ export function NavigationMenuDemo() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-    </div>
+    )
+  } else {
+    return (
+      <div onClick={handleClickBurger} >
+        <Menu />
+      </div>
+    )
+  }
+}
+
+export function NavigationMenuDemo() {
+  return (
+    <NavMenu />
   )
 }
 
