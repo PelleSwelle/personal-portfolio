@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-
+import { Menu } from "@deemlol/next-icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -53,33 +53,40 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu viewport={false} className="fixed">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+    <div>
+      <div className="md:hidden">
+        <Menu size={24} color="#ffffff" />
+      </div>
+      <div>
+        <NavigationMenu viewport={false} className="fixed">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link href="/">Home</Link>
-            </NavigationMenuLink>
-        </NavigationMenuItem>
-        
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/projects">Projects</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-        <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link href="/projects">Projects</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link href="/about">About</Link>
-            </NavigationMenuLink>
-        </NavigationMenuItem>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-        <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link href="/contact">Contact</Link>
-            </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+    </div>
   )
 }
 
