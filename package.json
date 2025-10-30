@@ -41,6 +41,7 @@
     "react": "19.1.0",
     "react-code-blocks": "^0.1.6",
     "react-dom": "19.1.0",
+    "react-responsive": "^10.0.1",
     "shiki": "^3.12.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
