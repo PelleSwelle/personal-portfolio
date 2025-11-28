@@ -62,8 +62,6 @@ const NavMenu = () => {
 }
 
 export function NavigationMenuDemo() {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false)
-
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)'
   })
