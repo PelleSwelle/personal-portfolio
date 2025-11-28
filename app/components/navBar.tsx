@@ -17,7 +17,9 @@ const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="relative flex max-w-max flex-1 justify-start ml-4 mt-4" onClick={() => setIsOpen(!isOpen)}>
+    <div
+      className="fixed z-10 flex max-w-max flex-1 justify-start ml-4 mt-4"
+      onClick={() => setIsOpen(!isOpen)}>
       <Menu />
       {isOpen ?
         <NavMenu />
@@ -68,9 +70,9 @@ export function NavigationMenuDemo() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   return (
-    <div>
+    <>
       {isDesktopOrLaptop && <NavMenu />}
       {isTabletOrMobile && <BurgerMenu />}
-    </div>
+    </>
   )
 }
