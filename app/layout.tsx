@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Peter Dønvang - Portfolio",
-  description: "Peter Dønvang's personal portfolio site",
+  description: "Peter Dønvang's personal portfolio site"
 };
 
 export default function RootLayout({
@@ -30,19 +30,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row bg-background font-sans text-foreground`}
       >
-        <div className="absolute inset-0 z-0 w-full h-min-screen">
-          <div className="w-[120%] h-[120%]">
-            <BackgroundBalls/>
+        <div className="absolute inset-0 z-0 w-full h-min-screen overflow-hidden">
+          <div className="w-full h-full">
+            <BackgroundBalls />
           </div>
         </div>
-        <NavigationMenuDemo/>
+        <NavigationMenuDemo />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          >
-        {children}
+        >
+          {children}
         </ThemeProvider>
       </body>
     </html>
