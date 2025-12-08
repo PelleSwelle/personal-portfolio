@@ -8,26 +8,23 @@ export default function BackgroundBalls() {
     generateKeyframes({
       start: { x: 10, y: 10 },
       end: { x: 20, y: 20 }
-    },
-      5000),
+    }),
     generateKeyframes({
       start: { x: 30, y: 90 },
       end: { x: 10, y: 50 }
-    },
-      8000),
+    }),
     generateKeyframes({
       start: { x: 80, y: 20 },
       end: { x: 50, y: 80 }
-    },
-      9000),
+    }),
     generateKeyframes({
       start: { x: 80, y: 20 },
       end: { x: 0, y: 70 }
-    }, 4000),
+    }),
     generateKeyframes({
       start: { x: 80, y: 80 },
       end: { x: 60, y: 60 }
-    }, 5000)
+    })
   ];
 
   return (
