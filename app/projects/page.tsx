@@ -1,4 +1,3 @@
-import ProjectSection from "../components/projectSection";
 import { fetchAllProjects } from "../api/calls";
 import PortfolioItem from "../components/PortfolioItem";
 
