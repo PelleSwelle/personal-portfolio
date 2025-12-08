@@ -23,13 +23,7 @@ export default async function Projects() {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Portfolio Showcase</h2>
-          <p className="text-lg text-indigo-500 font-semibold">Discover our latest projects and success stories</p>
-        </div>
-        <div className="flex flex-col md:flex-row items-center mb-8">
-          <button className="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">All</button>
-          <button className="filter-button  bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">Web Design</button>
-          <button className="filter-button  bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">App Development</button>
-          <button className="filter-button  bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">Branding</button>
+          <p className="text-lg text-indigo-500 font-semibold">Personal and professional projects</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
