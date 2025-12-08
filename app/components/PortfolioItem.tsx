@@ -23,7 +23,7 @@ export default async function PortfolioItem({ project }: { project: Project }) {
             <h3 className="w-full text-lg font-medium text-txt group-hover:text-gray-dark">{project.title}</h3>
             <div id="portfolio-items-details" className="flex">
               {roles.map((role) => (
-                <span className="text-sm font-bold text-pink-500 group-hover:text-indigo-500 pr-4">{role.title}</span>
+                <span key={role.id} className="text-sm font-bold text-pink-500 group-hover:text-indigo-500 pr-4">{role.title}</span>
               ))}
               {
                 allTech.map((tech: Technology) => (
