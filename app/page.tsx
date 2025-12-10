@@ -23,7 +23,7 @@ export default function Home() {
   ]
   return (
     <main className="min-h-screen w-full items-center justify-between p-24">
-      <div className="relative md:left-[30%] top-[20%] overflow-hidden">
+      <div className="relative md:left-[20%] top-[20%] overflow-visible">
 
         <div>
           <h1 className="text-4xl font-bold">My Name is Peter Dønvang and </h1>
