@@ -25,16 +25,16 @@ export default function Home() {
   ]
   return (
     <main className="min-h-screen w-full items-center justify-between p-24">
-      <div className="relative flex h-full flex-col  overflow-visible justify-between">
+      <div className="relative flex h-full flex-col justify-between">
 
-        <div>
+        <div className="md:ml-50">
           <h1 className="text-4xl font-bold">My Name is Peter Dønvang and </h1>
           <WriterText sentences={sentences} />
         </div>
 
-        <div className="flex">
-          <SocialButton image={'/images/socials/github-mark-white.png'} platform="GitHub" />
-          <SocialButton image={'/images/socials/InBug-White.png'} platform="LinkedIn" />
+        <div className="flex justify-end gap-10">
+          <SocialButton image={'/images/socials/github-mark-white.png'} link="https://github.com/PelleSwelle" />
+          <SocialButton image={'/images/socials/InBug-White.png'} link="https://linkedin.com/in/peter-donvang" />
         </div>
         {/* https://www.notion.so/pelleswelle/5382a1a80900480282122a7e4982ff0e?v=dd567cae7bb24bfbbed4924914d60f08 */}
       </div>
