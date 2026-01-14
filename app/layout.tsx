@@ -28,9 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row bg-background font-sans text-foreground overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row bg-background font-sans text-foreground`}
       >
-        <div className="absolute inset-0 z-0 w-full h-min-screen overflow-hidden">
+        <div className="fixed inset-0 z-0 w-full h-min-screen overflow-hidden">
           <div className="w-full h-full">
             <BackgroundBalls />
           </div>
