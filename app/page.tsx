@@ -1,4 +1,6 @@
+import Image from "next/image";
 import WriterText from "./components/writerText";
+import SocialButton from "./components/socialButton";
 
 export default function Home() {
 
@@ -9,7 +11,7 @@ export default function Home() {
     'code is fun',
     'there are hot singles in your area',
     'jag pratar också svenska!',
-    '... og dansk taler jeg også!',
+    '... dansk taler jeg også!',
     'what...',
     'are you just going to hang around here on the frontpage?',
     "I don't have anymore taglines to add to this.",
@@ -23,13 +25,17 @@ export default function Home() {
   ]
   return (
     <main className="min-h-screen w-full items-center justify-between p-24">
-      <div className="relative md:left-[20%] top-[20%] overflow-visible">
+      <div className="relative flex h-full flex-col justify-between">
 
-        <div>
+        <div className="md:ml-50">
           <h1 className="text-4xl font-bold">My Name is Peter Dønvang and </h1>
           <WriterText sentences={sentences} />
         </div>
-        {/* insert links to linkedin, github and so on */}
+
+        <div className="flex justify-end gap-10">
+          <SocialButton image={'/images/socials/github-mark-white.png'} link="https://github.com/PelleSwelle" />
+          <SocialButton image={'/images/socials/InBug-White.png'} link="https://linkedin.com/in/peter-donvang" />
+        </div>
         {/* https://www.notion.so/pelleswelle/5382a1a80900480282122a7e4982ff0e?v=dd567cae7bb24bfbbed4924914d60f08 */}
       </div>
     </main>
